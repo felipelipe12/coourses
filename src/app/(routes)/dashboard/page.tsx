@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { Header } from "./_components/global/Header";
-import { Sidebar } from "./_components/global/Sidebar";
+import { Header } from "@/app/_components/global/Header";
+import { Sidebar } from "@/app/_components/global/Sidebar";
 
-export default function Home() {
+export default function Dashboard() {
   return (
     <div className="flex">
       <aside>
@@ -15,4 +15,4 @@ export default function Home() {
       </main>
     </div>
   );
-} 
+}
