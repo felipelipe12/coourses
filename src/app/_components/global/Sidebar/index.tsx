@@ -2,7 +2,12 @@ import { Accordion } from "./elements/Accordion";
 import { Logo } from "./elements/Logo";
 import { Option } from "./elements/Option";
 
-import { FaLayerGroup, FaQuestion } from "react-icons/fa6";
+import {
+  FaBars,
+  FaBarsStaggered,
+  FaLayerGroup,
+  FaQuestion,
+} from "react-icons/fa6";
 
 import { useState } from "react";
 
@@ -17,8 +22,6 @@ const accordionList = [
   },
 ];
 
-
-
 export function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -29,13 +32,15 @@ export function Sidebar() {
   return (
     // <nav className="flex h-screen w-[18rem] flex-col overflow-auto border-r px-4 py-2">
     <nav
-      className={`flex h-screen transform flex-col overflow-auto border-r px-4 py-2 transition-transform ${
-        isOpen ? "translate-x-0" : "-translate-x-24"
-      }   `}
+      className={`flex h-screen flex-col overflow-auto overflow-x-hidden border-r px-4 py-2 transition-transform duration-700 ${
+        isOpen ? "w-[8rem]" : "w-[18rem]"
+      }`}
     >
-      <div className="flex">
+      <div className="flex items-center">
         <Logo />
-        <button onClick={toggleSidebar}>{isOpen ? "Close" : "Open"}</button>
+        <button onClick={toggleSidebar} className="rounded-lg bg-gray-300 p-2">
+          {isOpen ? <FaBars /> : <FaBarsStaggered />}
+        </button>
       </div>
       <div className="flex flex-col gap-2">
         <Option
